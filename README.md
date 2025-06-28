@@ -68,7 +68,7 @@ A simple and functional **E-commerce Store** built using **React**, **Vite**, **
 
 ## 📁 Folder Structure
 
-\`\`\`bash
+```
 📦shoppyglobe
  ┣ 📂node_modules/
  ┣ 📂public/
@@ -100,30 +100,27 @@ A simple and functional **E-commerce Store** built using **React**, **Vite**, **
  ┣ 📄.gitignore
  ┣ 📄package.json
  ┣ 📄package-lock.json
-\`\`\`
+```
 
 ---
 
 ## 💻 How to Run Locally
 
 1. **Clone the repo**
-
-\`\`\`bash
+```bash
 git clone https://github.com/RohitPalekar/ShoppyGlobe.git
 cd shoppyglobe
-\`\`\`
+```
 
 2. **Install dependencies**
-
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 3. **Run the dev server**
-
-\`\`\`bash
+```bash
 npm run dev
-\`\`\`
+```
 
 4. Visit: [http://localhost:5173](http://localhost:5173)
 
