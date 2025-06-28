@@ -1,0 +1,104 @@
+<!------------------------------------------------------- SHOPPYGLOBE PROJECT ------------------------------------------------------->
+
+<!---------------------------------------------------------- React + Tailwind + Redux ----------------------------------------------------------->
+
+<!-------------------------------------------------------------- Components ---------------------------------------------------------------->
+
+| main.jsx :
+           1. Used <BrowserRouter> for  routing.
+           2. Used <Provider store={store}> to connect Redux store for all.
+
+| App.jsx :
+          1. Uses <Routes> and <Route> for navigation.
+          2. Routes defined.
+          3. Uses ToastContainer for popup messages.
+
+| Header.jsx :
+             1. Added logo and Home link.
+             2. Also added Cart icon with item count using Redux state.
+             3. It Navigates to Cart page on click.
+
+| Home.jsx :
+           1. Added welcome heading.
+           2. Added ProductList to display all products.
+
+| ProductList.jsx :
+                  1. Used useFetch hook to fetch products from API.
+                  2. Added searchbar to filter products.
+                  3. Added ProductItem cards for each product.
+                  4. Made it Responsive.
+  
+| ProductItem.jsx :
+                  1. It shows single product card with image, title, brand, price (discounted and original), and rating.
+                  2. On clicked it navigates to ProductDetail page.
+                  3. Add to Cart button Added.
+                  4. used toastify for popup msg.
+
+| ProductDetail.jsx :
+                    1. Fetches individual product data by ID using useFetch.
+                    2. It shows product image, title, brand, price, rating, stock, description.
+                    3. Add to Cart button Added.
+                    4. used toastify for popup msg.
+                    5. Used useParams to get productId from URL.
+| Cart.jsx :
+           1. Fetched cart products from Redux.
+           2. Added all items using CartItem component.
+           3. Calculated subtotal with discount logic beacause discounted price not given.
+           4. Proceed to Checkout button is added.
+           5. It will navigates to Checkout page
+           6. If items are not present in cart it shows empty cart message.
+           7. With continue shopping button to navigate to home.
+
+| CartItem.jsx :
+               1. It shows individual cart item with image, title, brand, rating, price.
+               2. "+" button dispatches increaseQuantity and checks stock.
+               3. "-" button dispatches decreaseQuantity and  removes item if quantity is 0.
+               4. used toastify for popup msg.
+
+| Checkout.jsx :
+               1. It shows order summary with product details and total.
+               2. Also added shipping information but its ui only.
+               3. And payment method options also.
+               4. Place Order button added.
+               5. Used window.confirm for order confirmation.
+               6. Then it navigates to OrderPlaced page.
+               7. And if cancled shows popup.
+
+| OrderPlaced.jsx :
+                  1. It shows order placed success message.
+                  2. And Continue Shopping button added which navigates back to home.
+
+| NotFound.jsx :
+               1. It shows 404 error page with logo and message.
+               2. Also added Return to Home button which navigates back to home.
+
+| LoadingSpinner.jsx :
+                     1. To shows loading animation during lazy loading.
+
+<!-------------------------------------------------------------- Redux ---------------------------------------------------------------->
+
+| store.js :
+           1. Configured Redux store with cartReducer and productFilterReducer.
+
+| cartSlice.js :
+               1. Manages cartProducts array.
+               2. Reducers:
+                          - addProductToCart : Adds new item or increases quantity if exists.
+                          - increaseQuantity : Increases item quantity by 1.
+                          - decreaseQuantity : Decreases quantity and removes item if quantity becomes 0.
+                          - clearCart : It will make entire cart empty.
+
+| productFilterSlice.js :
+                        1. It Manages filteredProducts.
+                        2. Reducer:
+                                  - setFilteredProducts : It Sets products with matching search input.
+
+<!-------------------------------------------------------------- Hook ---------------------------------------------------------------->
+
+| useFetch.js :
+              1. Custom hook to fetch data from any URL.
+              2. It returns data,isLoading,error.
+              3. Used useEffect to trigger fetch on URL change.
+              4. Used try/catch for error handling.
+
+
