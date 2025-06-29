@@ -5,9 +5,7 @@ A simple and functional **E-commerce Store** built using **React**, **Vite**, **
 
 ---
 
-## 🖼️ Project Preview
-
----
+## 🖼️ Project Preview :
 
 ## 🏠 Homepage 
 ![Homepage](images/HomePage.png)
